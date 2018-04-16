@@ -1,0 +1,14 @@
+<ul>
+  <div *ngFor="let curso of cursosObservable | async">
+    <ngb-alert type="info" [dismissible]="false">
+      <h3><a href="{{ curso.url }}"></a>{{ curso.titulo }}</h3>
+      <p>{{ curso.descricao }}</p>
+      <div>
+          <a href="{{ curso.url }}" target="_blank" class="btn btn-primary">
+            Va para o curso
+          </a>
+          <button (click)="deletarCurso(curso)" class="btn btn-danger">Deletar</button>
+      </div>
+    </ngb-alert>
+  </div>
+</ul>
